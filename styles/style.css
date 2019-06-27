@@ -1,0 +1,100 @@
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.header {
+	z-index: 999;
+}
+
+.slider {
+	height: 100vh;
+	background-color: #424C7D;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: -999;
+}
+
+.slider__slide {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+}
+
+.slider__container {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+	padding: 0;
+}
+
+.slider__slide {
+	height: 100vh;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+	flex-basis: 50%;
+	transition: ease-in .3s;
+	position: relative;
+}
+
+.slider__slide:hover {
+	flex-basis: 150%;
+	transition: ease-in .3s;
+}
+
+.slider__slide-header {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.slider__slide-img {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	opacity: 0;
+	transition: ease-in .3s;
+}
+
+.slider__slide-img:hover {
+	opacity: 1;
+	transition: ease-in .3s;
+}
+
+.slider__slide-img-left {
+	background: url(../images/catdog.webp) no-repeat center;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+.slider__slide-img-right {
+	background: url(../images/pig.jpg) no-repeat center;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
