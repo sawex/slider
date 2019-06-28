@@ -83,7 +83,7 @@ WebzpHeaderSlider.prototype.initBlueScreenAnimations = function() {
 
   titleBottom.addEventListener('click', function() {
     titleTop.classList.add('toLeftHover');
-    conceptionTitle.style.position = 'absolute';
+    // conceptionTitle.style.position = 'absolute';
     titleBottomHeader.style.bottom = `${slideHeader.offsetTop}px`;
     titleBottomHeader.style.transform = 'unset';
   });
