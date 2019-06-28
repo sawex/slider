@@ -212,7 +212,7 @@ body {
 	50% {opacity: 0.25; bottom: 0;}
 	75% {opacity: 0.1; bottom: -5px;}
 	90% {opacity: 0.03; bottom: -10px;} 
-	to {opacity: 0; bottom: -20px;}
+	to {opacity: 0; bottom: -20px; display: none;}
 }
 
 @media screen and (max-width: 1200px) {
@@ -495,4 +495,19 @@ body {
 	75% {opacity: 0.4; left: -250px;}
 	90% {opacity: 0.15; left: -350px;} 
 	to {opacity: 0; left: -100vh; display: none;}
+}
+
+.mobile-slider__slide-header .animation-desc {
+	opacity: 1;
+	animation: toTopOnClick .8s;
+	transition: ease-in .3s;
+}
+
+@keyframes toTopOnClick {
+	from {opacity: 0; bottom: -300px;}
+	25% {opacity: 0.05; bottom: -250px;}
+	50% {opacity: 0.1; bottom: -200px;}
+	75% {opacity: 0.25; bottom: -175px;}
+	90% {opacity: 0.5; bottom: -100px;} 
+	to {opacity: 1; bottom: -50px;}
 }
