@@ -1,4 +1,5 @@
 const WebzpHeaderSlider = function() {
+  this.slick = null;
   this.init = function() {
     this.initDesktopHovers();
     this.initDesktopHoverPosition();
@@ -24,12 +25,18 @@ WebzpHeaderSlider.prototype.initDesktopHovers = function() {
 };
 
 WebzpHeaderSlider.prototype.initMobileSlick = function() {
-  jQuery('.mobile-slider__active-slider').slick({
+  const $slick = jQuery('.mobile-slider__active-slider').slick({
     prevArrow: '',
     nextArrow: '',
     dots: true,
     slidesToShow: 1,
+  }).on('swipe', (e, slick) => {
+    const el = slick.$slides[slick.currentSlide].querySelector('.slider__slide-desc');
+    el.classList.remove('animation-desc');
+    el.classList.add('animation-desc');
   });
+
+  this.slick = $slick[0].slick;
 }
 
 WebzpHeaderSlider.prototype.initDesktopHoverPosition = function() {
@@ -75,24 +82,37 @@ WebzpHeaderSlider.prototype.initBlueScreenAnimations = function() {
   const slideHeader = document.querySelector('.mobile-slider__active-slider .mobile-slider__slide-header');
   const conceptionTitle = document.querySelector('.absolute');
 
+  const desc = document.querySelector('.mobile-slider__text-desc');
+
   titleTop.addEventListener('click', function() {
     const offsetTop = slideHeader.getBoundingClientRect().top;
 
+    // desc.classList.add('desc-to-bottom');
     titleBottom.classList.add('toBottomHover');
     titleTopHeader.style.top = `${offsetTop}px`;
     titleTopHeader.style.transform = 'unset';
-    document.querySelector('.slider__slide-desc').classList.add('animation-desc');
+    setTimeout(() => {
+      document.querySelector('.mobile-slider__active-slider').classList.add('slider-active');
+      document.querySelector('.first-desc').classList.add('animation-desc');
+    }, 500);
   });
 
-  titleBottom.addEventListener('click', function() {
+  titleBottom.addEventListener('click', () => {
+    this.slick.slickGoTo(1);
     const offsetBottom = slideHeader.offsetTop;
     const height = slideHeader.getBoundingClientRect().height;
 
+    // desc.classList.add('desc-to-bottom');
     titleTop.classList.add('toLeftHover');
+
     titleBottomHeader.style.bottom = `${offsetBottom}px`;
     titleBottomHeader.style.height = `${height}px`;
     titleBottomHeader.style.transform = 'unset';
-    document.querySelector('.slider__slide-desc').classList.add('animation-desc');
+
+    setTimeout(() => {
+      document.querySelector('.mobile-slider__active-slider').classList.add('slider-active');
+      document.querySelector('.second-desc').classList.add('animation-desc');
+    }, 500);
   });
 
   window.addEventListener('resize', () => {
