@@ -81,6 +81,7 @@ WebzpHeaderSlider.prototype.initBlueScreenAnimations = function() {
     titleBottom.classList.add('toBottomHover');
     titleTopHeader.style.top = `${offsetTop}px`;
     titleTopHeader.style.transform = 'unset';
+    document.querySelector('.slider__slide-desc').classList.add('animation-desc');
   });
 
   titleBottom.addEventListener('click', function() {
@@ -91,6 +92,7 @@ WebzpHeaderSlider.prototype.initBlueScreenAnimations = function() {
     titleBottomHeader.style.bottom = `${offsetBottom}px`;
     titleBottomHeader.style.height = `${height}px`;
     titleBottomHeader.style.transform = 'unset';
+    document.querySelector('.slider__slide-desc').classList.add('animation-desc');
   });
 
   window.addEventListener('resize', () => {
