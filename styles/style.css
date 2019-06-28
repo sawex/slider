@@ -239,10 +239,11 @@ body {
 	}
 
 	.slider__slide {
+    display: flex !important;
 		flex-basis: auto;
 		position: relative;
 		width: 100%;
-		/*height: 130px;*/
+		height: 100vh !important;
 	}
 
 	.slider__slide--top {

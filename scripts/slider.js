@@ -45,12 +45,36 @@ headerPositionRight.forEach(function(element, index) {
 });
 
 const titleTop = document.querySelector('.slider__slide-title--top');
+const titleTopHeader = document.querySelector('.slider__slide--top');
+
 const titleBottom = document.querySelector('.slider__slide-title--bottom');
+const titleBottomHeader = document.querySelector('.slider__slide--bottom');
+
+const slideHeader = document.querySelector('.mobile-slider__active-slider .mobile-slider__slide-header');
+const conceptionTitle = document.querySelector('.absolute');
 
 titleTop.addEventListener('click', function() {
   titleBottom.classList.add('toBottomHover');
+  titleTopHeader.style.top = `${slideHeader.offsetTop}px`;
+  titleTopHeader.style.transform = 'unset';
 });
 
 titleBottom.addEventListener('click', function() {
   titleTop.classList.add('toLeftHover');
+  conceptionTitle.style.position = 'absolute';
+  titleBottomHeader.style.bottom = `${slideHeader.offsetTop}px`;
+  titleBottomHeader.style.transform = 'unset';
+});
+
+window.addEventListener('resize', () => {
+  titleTopHeader.style.top = `${slideHeader.offsetTop}px`;
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  jQuery(".mobile-slider__active-slider").slick({
+    prevArrow: '',
+    nextArrow: '',
+    dots: false,
+    slidesToShow: 1,
+  });
 });
