@@ -111,12 +111,12 @@ body {
 
 .slider__slide-img-left {
 	background: url(../images/image-1.png) no-repeat center;
-	background-size: cover;
+	/*background-size: cover;*/
 }
 
 .slider__slide-img-right {
 	background: url(../images/image-2.png) no-repeat center;
-	background-size: cover;
+	/*background-size: cover;*/
 }
 
 .slider__description {
@@ -510,4 +510,25 @@ body {
 	75% {opacity: 0.25; bottom: -175px;}
 	90% {opacity: 0.5; bottom: -100px;} 
 	to {opacity: 1; bottom: -50px;}
+}
+
+.slider-hidden {
+	position: absolute; 
+	opacity: 0; 
+	z-index: -1
+}
+
+.slider-active {
+	opacity: 1;
+	z-index: 1;
+	animation: active .5s;
+}
+
+@keyframes active {
+	from {opacity: 0;}
+	25% {opacity: 0.25;}
+	50% {opacity: 0.5;}
+	75% {opacity: 0.75;}
+	90% {opacity: 0.9;} 
+	to {opacity: 1;}
 }
