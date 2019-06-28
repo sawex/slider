@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-	<header class="header">
+	<!-- <header class="header">
 		<nav class="header__navbar">
 			<a href="#" class="header__logo">Logo</a>
 			<ul class="header__nav-menu">
@@ -24,7 +24,7 @@
 				</li>
 			</ul>
 		</nav>
-	</header>
+	</header> -->
 	
 	<main class="main">
 		<section class="slider">
@@ -33,7 +33,7 @@
 					<figure class="slider__slide-img slider__slide-img-left"></figure>
 					<header class="slider__slide-header">
 						<h2 class="slider__slide-title">Conception</h2>
-						<!-- <p class="slider__slide-desc">Lorem ipsum dolor.</p> -->
+						<p class="slider__slide-desc--dt">Découvrez notre département <span class="slider__slide-desc--ttu">Conception</span></p>
 					</header>
 				</a>
 
@@ -41,7 +41,7 @@
 					<figure class="slider__slide-img slider__slide-img-right"></figure>
 					<header class="slider__slide-header">
 						<h2 class="slider__slide-title">Realisation</h2>
-						<!-- <p class="slider__slide-desc">Lorem ipsum dolor.</p> -->
+						<p class="slider__slide-desc--dt">Découvrez notre département <span class="slider__slide-desc--ttu">Realisation</span></p>
 					</header>			
 				</a>
 				<div class="after-separator"></div>
@@ -49,21 +49,21 @@
 			</div>
 
 			<div class="mobile-slider">
-				<div class="mobile-slider__container" style="display: none;">
+				<div class="mobile-slider__container">
 					<a href="#" class="slider__slide">
-						<header class="mobile-slider__slide-header">
-							<h2 class="slider__slide-title">Conception</h2>
+						<header class="mobile-slider__slide-header slider__slide--top">
+							<h2 class="slider__slide-title slider__slide-title--top">Conception</h2>
 						</header>
 					</a>
 
 					<a href="#" class="slider__slide">
-						<header class="mobile-slider__slide-header">
-							<h2 class="slider__slide-title">Realisation</h2>
+						<header class="mobile-slider__slide-header slider__slide--bottom">
+							<h2 class="slider__slide-title slider__slide-title--bottom">Realisation</h2>
 						</header>			
 					</a>
 				</div>
 
-				<div class="mobile-slider__active-slider">
+				<div class="mobile-slider__active-slider" style="position: absolute; opacity: .2; display: none;">
 					<a href="#" class="slider__slide slider__slide--active">
 						<figure class="mobile-slider__slide-img slider__slide-img-left"></figure>
 						<header class="mobile-slider__slide-header">
@@ -92,5 +92,7 @@
 			</div>
 		</section>
 	</main>
+
+	<script src="scripts/slider.js"></script>
 </body>
 </html>
