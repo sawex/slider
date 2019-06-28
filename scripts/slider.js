@@ -76,20 +76,32 @@ WebzpHeaderSlider.prototype.initBlueScreenAnimations = function() {
   const conceptionTitle = document.querySelector('.absolute');
 
   titleTop.addEventListener('click', function() {
+    const offsetTop = slideHeader.getBoundingClientRect().top;
+
     titleBottom.classList.add('toBottomHover');
-    titleTopHeader.style.top = `${slideHeader.offsetTop}px`;
+    titleTopHeader.style.top = `${offsetTop}px`;
     titleTopHeader.style.transform = 'unset';
   });
 
   titleBottom.addEventListener('click', function() {
+    const offsetBottom = slideHeader.offsetTop;
+    const height = slideHeader.getBoundingClientRect().height;
+
     titleTop.classList.add('toLeftHover');
-    // conceptionTitle.style.position = 'absolute';
-    titleBottomHeader.style.bottom = `${slideHeader.offsetTop}px`;
+    titleBottomHeader.style.bottom = `${offsetBottom}px`;
+    titleBottomHeader.style.height = `${height}px`;
     titleBottomHeader.style.transform = 'unset';
   });
 
   window.addEventListener('resize', () => {
+    const offsetTop = slideHeader.getBoundingClientRect().top;
+    const offsetBottom = slideHeader.offsetTop;
+    const height = slideHeader.getBoundingClientRect().height;
+
     titleTopHeader.style.top = `${slideHeader.offsetTop}px`;
+    titleTopHeader.style.top = `${offsetTop}px`;
+    titleBottomHeader.style.bottom = `${offsetBottom}px`;
+    titleBottomHeader.style.height = `${height}px`;
   });
 }
 
