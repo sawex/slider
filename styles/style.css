@@ -347,7 +347,8 @@ body {
 		position: absolute;
 	}
 
-	.mobile-slider__navigation {
+	.mobile-slider__navigation,
+  .slick-dots {
 		position: absolute;
 		bottom: 20px;
 		left: 50%;
@@ -357,20 +358,24 @@ body {
 		display: flex;
 	}
 
-	.mobile-slider__nav-list-item {
+	.mobile-slider__nav-list-item,
+  .slick-dots li {
 		list-style-type: none;
 		margin-right: 10px;
 	}
 
-	.mobile-slider__nav-btn {
+	.mobile-slider__nav-btn,
+  .slick-dots button {
 		border: 1px solid #c4c4c4;
 		background-color: #c4c4c4;
 		width: 50px;
 		cursor: pointer;
 		height: 5px;
+    font-size: 0;
 	}
 
-	.mobile-slider__nav-btn--active {
+	.mobile-slider__nav-btn--active,
+  .slick-dots .slick-active button {
 		border: 1px solid #fff;	
 		background-color: #fff;
 	}
