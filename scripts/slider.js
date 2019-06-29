@@ -30,10 +30,6 @@ WebzpHeaderSlider.prototype.initMobileSlick = function() {
     nextArrow: '',
     dots: true,
     slidesToShow: 1,
-  }).on('swipe', (e, slick) => {
-    const el = slick.$slides[slick.currentSlide].querySelector('.slider__slide-desc');
-    el.classList.remove('animation-desc');
-    el.classList.add('animation-desc');
   });
 
   this.slick = $slick[0].slick;
@@ -43,7 +39,7 @@ WebzpHeaderSlider.prototype.initDesktopHoverPosition = function() {
   const titlePositionLeft = document.querySelectorAll('.slider__slide-right');
   const titlePositionRight = document.querySelectorAll('.slider__slide-left');
 
-  titlePositionLeft.forEach(function(element, index) {
+  titlePositionLeft.forEach((element) => {
     element.addEventListener('mouseover', function() {
       const leftSlide = document.querySelector('.slider__slide-left > header');
       leftSlide.style.left = '-50%';
@@ -57,7 +53,7 @@ WebzpHeaderSlider.prototype.initDesktopHoverPosition = function() {
     });
   });
 
-  titlePositionRight.forEach(function(element, index) {
+  titlePositionRight.forEach((element) => {
     element.addEventListener('mouseover', function() {
       const leftSlide = document.querySelector('.slider__slide-right > header');
       leftSlide.style.left = '100%';
@@ -87,7 +83,7 @@ WebzpHeaderSlider.prototype.initBlueScreenAnimations = function() {
   titleTop.addEventListener('click', function() {
     const offsetTop = slideHeader.getBoundingClientRect().top;
 
-    // desc.classList.add('desc-to-bottom');
+    desc.classList.add('desc-to-bottom');
     titleBottom.classList.add('toBottomHover');
     titleTopHeader.style.top = `${offsetTop}px`;
     titleTopHeader.style.transform = 'unset';
@@ -102,14 +98,14 @@ WebzpHeaderSlider.prototype.initBlueScreenAnimations = function() {
     const offsetBottom = slideHeader.offsetTop;
     const height = slideHeader.getBoundingClientRect().height;
 
-    // desc.classList.add('desc-to-bottom');
+    desc.classList.add('desc-to-bottom');
     titleTop.classList.add('toLeftHover');
 
+
+    setTimeout(() => {
     titleBottomHeader.style.bottom = `${offsetBottom}px`;
     titleBottomHeader.style.height = `${height}px`;
     titleBottomHeader.style.transform = 'unset';
-
-    setTimeout(() => {
       document.querySelector('.mobile-slider__active-slider').classList.add('slider-active');
       document.querySelector('.second-desc').classList.add('animation-desc');
     }, 500);
